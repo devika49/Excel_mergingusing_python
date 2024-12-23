@@ -1,0 +1,19 @@
+#Regular Expression:
+
+#Matches numeric values followed by recognized units (MT/M, T/M, Kg/D, KL/D, etc.).
+#Handles multi-line and multi-value cells.
+#Unit Conversion:
+
+MT/M: Multiplied by 12 to get MT/A.
+T/M: Multiplied by 12 to get T/A.
+Kg/D: Converted to MT/A using value _ 365 / 1000.
+KL/D: Converted to KL/A using value _ 365.
+Lit/M: Converted to KL/A using value _ 12 / 1000.
+Kg/M: Converted to MT/A using value _ 12 / 1000.
+Handles Multi-Line Strings:
+
+Processes multi-line cells and combines results in a semicolon-separated format.
+T/A Conversion:
+
+If the unit is T/A, it is directly converted to MT/A by maintaining the same value since they are equivalent.
+Example: 350 T/A becomes 350.00 MT/A.
